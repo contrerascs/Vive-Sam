@@ -1,0 +1,5 @@
+# Configuración local del editor / Claude Code
+.claude/
+
+# Originales PNG ya convertidos a JPG optimizado (el sitio usa los .jpg)
+assets/images/**/*.png

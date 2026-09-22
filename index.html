@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- =====================================================================
+       SEO ON-PAGE
+       - <title>: incluye las dos intenciones principales (casas + departamentos)
+         y la ubicación. Es lo que Google muestra como título en resultados.
+       - meta description: resume la oferta, el precio "desde" y la ubicación.
+       - Proyecto ficticio: se marca como noindex para que no se confunda con
+         una oferta inmobiliaria real. Quitar "noindex" solo si se desea
+         indexar la página para la demostración de SEO.
+       ===================================================================== -->
+  <title>Casas y Departamentos en Venta en Zacatecas | Vive Sam TV</title>
+  <meta name="description" content="Casas nuevas en venta en Zacatecas desde $1,450,000 MXN y departamentos nuevos desde $890,000 MXN en Colonia Quezada. Consulta precios, modelos y agenda una visita con Vive Sam TV.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#1E2B2A">
+  <link rel="canonical" href="https://TU_USUARIO.github.io/vive-sam/">
+
+  <!-- Open Graph (vista previa al compartir en WhatsApp / Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Casas y Departamentos en Venta en Zacatecas | Vive Sam TV">
+  <meta property="og:description" content="Casas y departamentos nuevos en venta en Colonia Quezada, Zacatecas. Consulta precios y agenda una visita.">
+  <meta property="og:image" content="assets/images/og/og-vive-sam.jpg">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografías: una sola petición a Google Fonts, con display=swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css?v=5">
+
+  <!-- =====================================================================
+       MEDICIÓN: GOOGLE TAG MANAGER / GA4 / GOOGLE ADS
+       Toda la configuración (IDs, etiquetas de conversión, número de
+       WhatsApp y teléfono) vive en js/tracking.js → objeto VIVE_SAM_CONFIG.
+       tracking.js carga GTM automáticamente cuando GTM_ID deja de ser el
+       placeholder "GTM-XXXXXXX". Se carga en <head> como recomienda Google.
+       ===================================================================== -->
+  <script src="js/tracking.js?v=5"></script>
+</head>
+<body>
+  <!-- GTM (noscript): reemplazar GTM-XXXXXXX por el ID real del contenedor -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Sprite de iconos SVG (ligero, sin dependencias externas) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7M3 15h18M6 10V7.5A1.5 1.5 0 0 1 7.5 6h3A1.5 1.5 0 0 1 12 7.5V10m0 0V7.5A1.5 1.5 0 0 1 13.5 6h3A1.5 1.5 0 0 1 18 7.5V10"/></symbol>
+    <symbol id="i-bath" viewBox="0 0 24 24"><path d="M4 12h16v2.5A4.5 4.5 0 0 1 15.5 19h-7A4.5 4.5 0 0 1 4 14.5V12Zm2 0V6.5a2.5 2.5 0 0 1 5 0M7.5 19 6.5 21m10-2 1 2"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17v-5.5L7 6h10l2 5.5V17M5 17h14M5 17v2m14-2v2M5 11.5h14M8 14.3h.01M16 14.3h.01"/></symbol>
+    <symbol id="i-area" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM9 4v3m6-3v3M4 9h3m-3 6h3m13-6h-3m3 6h-3M9 20v-3m6 3v-3"/></symbol>
+    <symbol id="i-land" viewBox="0 0 24 24"><path d="M3 20h18M5 20V9l7-5 7 5v11M9 20v-6h6v6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.5 4.5-2 1.5a11 11 0 0 0 6 6l1.5-2 4.5 1.5V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.2L4 20Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a3.5 3.5 0 0 1-1.8-1.8l.8-1-1-2L9 9.5Z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10h16M8 3v4m8-4v4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 8-8m-3 3 2 2m-4 0 1.5 1.5"/></symbol>
+    <symbol id="i-house" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7M5 9.5V20h14V9.5M10 20v-5h4v5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M5 21V4h10v17M15 9h4v12M3 21h18M8 7h1m2 0h1m-4 3h1m2 0h1m-4 3h1m2 0h1m-4 3h1m2 0h1"/></symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 21v-6m0 0a5 5 0 0 0 5-5 5 5 0 0 0-10 0 5 5 0 0 0 5 5Zm0-3-2-2m2 1 2-2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.3 3 8 7 9.5 4-1.5 7-5.2 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 12h9M13 4v16"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M6 6l2.5 2.5m7 7L18 18M18 6l-2.5 2.5m-7 7L6 18"/></symbol>
+    <symbol id="i-shop" viewBox="0 0 24 24"><path d="M4 9h16l-1-4H5L4 9Zm0 0v11h16V9M9 20v-6h6v6"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M3 13h3l4 3h4a1.5 1.5 0 0 0 0-3h-3m6 1 3.5-2.2a1.5 1.5 0 0 1 2 2.2L16 19H9l-3-2H3"/><path d="M13 5.5a2.5 2.5 0 1 1 5 0c0 2-2.5 3.5-2.5 3.5S13 7.5 13 5.5Z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="m4 16 5-5 4 4 2-2 5 5"/><circle cx="15.5" cy="9" r="1.5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  </svg>
+
+  <!-- =====================================================================
+       HEADER / NAVEGACIÓN
+       Los enlaces usan anchors internos (#casas, #departamentos, #precios…)
+       que también sirven como URLs finales específicas por grupo de anuncios:
+         Grupo "Casas"         → https://…/index.html?interes=casas#casas
+         Grupo "Departamentos" → https://…/index.html?interes=departamentos#departamentos
+       ===================================================================== -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a class="logo" href="#inicio" aria-label="Vive Sam TV — inicio">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M6 19 20 7l14 12" /><path d="M11 16v16h18V16" /><path d="M17 32v-8h6v8" /></svg>
+        </span>
+        <span class="logo-text">Vive <strong>Sam TV</strong></span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#casas" data-filter-link="casas">Casas</a></li>
+          <li><a href="#departamentos" data-filter-link="departamentos">Departamentos</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+        </ul>
+        <div class="nav-actions">
+          <!-- CONVERSIÓN SECUNDARIA: click en teléfono (evento click_phone) -->
+          <a class="nav-phone js-phone-link" href="tel:+524981060429" data-track="click_phone" data-track-location="header">
+            <svg class="icon"><use href="#i-phone"/></svg><span class="js-phone-text">498 106 0429</span>
+          </a>
+          <!-- CONVERSIÓN SECUNDARIA: click en "Agendar visita" -->
+          <a class="btn btn-primary btn-sm js-cta-form" href="#contacto" data-solicitud="visita" data-track="click_agendar_visita" data-track-location="header">Agendar una visita</a>
+        </div>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ===================================================================
+         HERO
+         H1 principal: comunica de inmediato la oferta (venta de casas y
+         departamentos) + ubicación (Zacatecas).
+         js/script.js adapta el H1 y el subtítulo si la URL trae
+         ?interes=casas o ?interes=departamentos → "message match" entre el
+         anuncio y la landing (mejora la relevancia / experiencia en página).
+         =================================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media media is-hero" data-ph="hero/hero.jpg">
+        <img src="assets/images/hero/hero.jpg" alt="Fachada de casa nueva y moderna en venta en Colonia Quezada, Zacatecas" width="1024" height="640" fetchpriority="high">
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <p class="eyebrow eyebrow-light" id="hero-eyebrow">Casas y departamentos nuevos · Zacatecas</p>
+        <h1 id="hero-title">Encuentra tu próximo hogar en Zacatecas</h1>
+        <p class="hero-sub" id="hero-sub">Casas y departamentos nuevos en venta en Colonia Quezada, Zacatecas. Conoce nuestras opciones de vivienda, consulta precios y agenda una visita.</p>
+
+        <!-- CTAs PRINCIPALES DEL HERO
+             "Ver casas" → intención del grupo de anuncios CASAS
+             "Ver departamentos" → intención del grupo de anuncios DEPARTAMENTOS
+             Evento medible: click_conocer_propiedades -->
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="#casas" data-filter-link="casas" data-track="click_conocer_propiedades" data-track-label="hero_ver_casas">
+            <svg class="icon"><use href="#i-house"/></svg> Ver casas
+          </a>
+          <a class="btn btn-light btn-lg" href="#departamentos" data-filter-link="departamentos" data-track="click_conocer_propiedades" data-track-label="hero_ver_departamentos">
+            <svg class="icon"><use href="#i-building"/></svg> Ver departamentos
+          </a>
+        </div>
+
+        <!-- Precios "desde": textos reutilizables en anuncios de búsqueda
+             ("Casas en venta en Zacatecas desde $1,450,000 MXN") -->
+        <ul class="hero-facts">
+          <li><span>Casas desde</span><strong>$1,450,000 <small>MXN</small></strong></li>
+          <li><span>Departamentos desde</span><strong>$890,000 <small>MXN</small></strong></li>
+          <li><span>Opciones de</span><strong>1, 2 y 3 <small>recámaras</small></strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         ENCUENTRA TU VIVIENDA — SELECTOR DE INTENCIÓN
+         Útil en clase para explicar la diferencia entre intenciones de
+         búsqueda: "comprar casa" vs "comprar departamento".
+         Cada opción filtra el listado y lleva a la sección correspondiente.
+         Evento medible: select_intent (sirve también como señal de
+         REMARKETING: audiencia "interesados en casas" / "en departamentos").
+         =================================================================== -->
+    <section class="section intent" id="encuentra-tu-vivienda" aria-labelledby="intent-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Encuentra tu vivienda</p>
+          <h2 id="intent-title">Estoy buscando…</h2>
+        </div>
+        <div class="intent-grid">
+          <a class="intent-card" href="#casas" data-filter-link="casas" data-track="select_intent" data-track-label="casa">
+            <span class="intent-icon"><svg class="icon"><use href="#i-house"/></svg></span>
+            <span class="intent-body">
+              <span class="intent-title">Comprar una casa</span>
+              <span class="intent-text">Casas nuevas de 2 y 3 recámaras con terreno propio y cochera. Desde $1,450,000 MXN.</span>
+            </span>
+            <span class="intent-go">Quiero comprar una casa <svg class="icon"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="intent-card" href="#departamentos" data-filter-link="departamentos" data-track="select_intent" data-track-label="departamento">
+            <span class="intent-icon"><svg class="icon"><use href="#i-building"/></svg></span>
+            <span class="intent-body">
+              <span class="intent-title">Comprar un departamento</span>
+              <span class="intent-text">Departamentos nuevos de 1 y 2 recámaras con cajón de estacionamiento. Desde $890,000 MXN.</span>
+            </span>
+            <span class="intent-go">Quiero conocer departamentos <svg class="icon"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PROPIEDADES (listado con filtro Todas | Casas | Departamentos)
+         Precios visibles en cada tarjeta (no se esconden detrás de
+         "Solicita precio").
+         =================================================================== -->
+    <section class="section section-alt" id="propiedades" aria-labelledby="propiedades-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Propiedades en venta</p>
+          <h2 id="propiedades-title">Casas y departamentos nuevos en venta en Colonia Quezada</h2>
+          <p class="section-lead">Seis modelos de vivienda nueva en Zacatecas con precios claros. Filtra por tipo de propiedad y solicita información del modelo que más te guste.</p>
+        </div>
+
+        <!-- FILTRO: evento medible filter_properties -->
+        <div class="filter" role="tablist" aria-label="Filtrar propiedades">
+          <button class="filter-btn is-active" role="tab" aria-selected="true" data-filter="todas">Todas <span class="filter-count">6</span></button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="casas">Casas <span class="filter-count">3</span></button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="departamentos">Departamentos <span class="filter-count">3</span></button>
+        </div>
+
+        <!-- ===============================================================
+             ▶ GRUPO DE ANUNCIOS 1 — CASAS
+             Keywords relacionadas: casas en venta, casas en venta en
+             Zacatecas, comprar casa en Zacatecas, casas nuevas en Zacatecas,
+             casas modernas en Zacatecas, casa nueva en venta.
+             URL final sugerida: ?interes=casas#casas
+             =============================================================== -->
+        <div class="property-group" id="casas" data-group="casas">
+          <div class="group-head">
+            <h2 class="group-title"><svg class="icon"><use href="#i-house"/></svg> Casas nuevas en venta en Zacatecas</h2>
+            <p class="group-sub">Tres modelos de casa moderna con terreno propio, desde <strong>$1,450,000 MXN</strong>.</p>
+          </div>
+
+          <div class="property-grid">
+
+            <!-- CASA SAM 1 — MODELO ENCINO -->
+            <article class="property-card" id="modelo-encino" data-type="casa" data-model="encino"
+                     data-gallery="casas/encino-3.jpg|Fachada posterior y jardín del Modelo Encino;casas/encino-2.jpg|Sala, comedor y cocina del Modelo Encino;casas/encino-1.jpg|Fachada principal y ficha técnica del Modelo Encino">
+              <!-- Galería: la 1.ª imagen de data-gallery es la portada de la tarjeta.
+                   Las fichas verticales (encino-1) van al final: el lightbox las muestra completas. -->
+              <div class="card-gallery">
+                <button class="media card-main js-open-gallery" type="button" data-ph="casas/encino-3.jpg" aria-label="Ver galería del Modelo Encino">
+                  <img src="assets/images/casas/encino-3.jpg" alt="Casa nueva en venta en Zacatecas, Modelo Encino: fachada posterior con jardín" loading="lazy" width="696" height="530">
+                  <span class="badge">Casa nueva</span>
+                  <span class="gallery-count"><svg class="icon"><use href="#i-image"/></svg> 3 fotos</span>
+                </button>
+                <div class="thumbs" aria-label="Miniaturas del Modelo Encino"></div>
+              </div>
+              <div class="card-body">
+                <p class="card-kicker">Casa Sam 1</p>
+                <h3 class="card-title">Modelo Encino</h3>
+                <p class="card-price">$1,450,000 <span>MXN</span></p>
+                <ul class="specs">
+                  <li><svg class="icon"><use href="#i-bed"/></svg><span><strong>2</strong> recámaras</span></li>
+                  <li><svg class="icon"><use href="#i-bath"/></svg><span><strong>1.5</strong> baños</span></li>
+                  <li><svg class="icon"><use href="#i-car"/></svg><span><strong>1</strong> estacionamiento</span></li>
+                  <li><svg class="icon"><use href="#i-area"/></svg><span><strong>95 m²</strong> construcción</span></li>
+                  <li><svg class="icon"><use href="#i-land"/></svg><span><strong>105 m²</strong> terreno</span></li>
+                </ul>
+                <p class="card-desc">Casa nueva en venta en Zacatecas, ideal para familias que buscan una vivienda moderna y funcional. El modelo Encino ofrece espacios cómodos, acabados contemporáneos y una ubicación estratégica en Colonia Quezada.</p>
+                <div class="card-ctas">
+                  <!-- CTA PRINCIPAL DE LA TARJETA → preselecciona el formulario (click_solicitar_informacion) -->
+                  <a class="btn btn-primary btn-block js-cta-form" href="#contacto" data-tipo="casa" data-propiedad="encino" data-solicitud="informacion" data-track="click_solicitar_informacion" data-track-label="encino">Quiero información del Modelo Encino</a>
+                  <a class="btn btn-ghost btn-block js-cta-form" href="#contacto" data-tipo="casa" data-propiedad="encino" data-solicitud="visita" data-track="click_agendar_visita" data-track-label="encino"><svg class="icon"><use href="#i-calendar"/></svg> Agendar una visita</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- CASA SAM 2 — MODELO CANTERA -->
+            <article class="property-card" id="modelo-cantera" data-type="casa" data-model="cantera"
+                     data-gallery="casas/cantera-1.jpg|Fachada del Modelo Cantera con cochera doble;casas/cantera-2.jpg|Sala y comedor de doble altura del Modelo Cantera;casas/cantera-3.jpg|Patio interior con jardín del Modelo Cantera">
+              <div class="card-gallery">
+                <button class="media card-main js-open-gallery" type="button" data-ph="casas/cantera-1.jpg" aria-label="Ver galería del Modelo Cantera">
+                  <img src="assets/images/casas/cantera-1.jpg" alt="Fachada de casa nueva de tres recámaras en venta en Zacatecas, Modelo Cantera" loading="lazy" width="1024" height="1024">
+                  <span class="badge">Casa nueva</span>
+                  <span class="gallery-count"><svg class="icon"><use href="#i-image"/></svg> 3 fotos</span>
+                </button>
+                <div class="thumbs" aria-label="Miniaturas del Modelo Cantera"></div>
+              </div>
+              <div class="card-body">
+                <p class="card-kicker">Casa Sam 2</p>
+                <h3 class="card-title">Modelo Cantera</h3>
+                <p class="card-price">$1,780,000 <span>MXN</span></p>
+                <ul class="specs">
+                  <li><svg class="icon"><use href="#i-bed"/></svg><span><strong>3</strong> recámaras</span></li>
+                  <li><svg class="icon"><use href="#i-bath"/></svg><span><strong>2</strong> baños</span></li>
+                  <li><svg class="icon"><use href="#i-car"/></svg><span><strong>2</strong> estacionamientos</span></li>
+                  <li><svg class="icon"><use href="#i-area"/></svg><span><strong>125 m²</strong> construcción</span></li>
+                  <li><svg class="icon"><use href="#i-land"/></svg><span><strong>140 m²</strong> terreno</span></li>
+                </ul>
+                <p class="card-desc">¿Quieres comprar casa en Zacatecas con espacio para crecer? El modelo Cantera es una casa nueva de 3 recámaras y 2 baños completos, con cochera para dos autos y una distribución pensada para la vida en familia.</p>
+                <div class="card-ctas">
+                  <a class="btn btn-primary btn-block js-cta-form" href="#contacto" data-tipo="casa" data-propiedad="cantera" data-solicitud="informacion" data-track="click_solicitar_informacion" data-track-label="cantera">Quiero información del Modelo Cantera</a>
+                  <a class="btn btn-ghost btn-block js-cta-form" href="#contacto" data-tipo="casa" data-propiedad="cantera" data-solicitud="visita" data-track="click_agendar_visita" data-track-label="cantera"><svg class="icon"><use href="#i-calendar"/></svg> Agendar una visita</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- CASA SAM 3 — MODELO SIERRA -->
+            <article class="property-card" id="modelo-sierra" data-type="casa" data-model="sierra"
+                     data-gallery="casas/sierra-1.jpg|Fachada del Modelo Sierra con cochera para dos autos;casas/sierra-2.jpg|Terraza y jardín posterior del Modelo Sierra;casas/sierra-3.jpg|Cocina con isla del Modelo Sierra">
+              <div class="card-gallery">
+                <button class="media card-main js-open-gallery" type="button" data-ph="casas/sierra-1.jpg" aria-label="Ver galería del Modelo Sierra">
+                  <img src="assets/images/casas/sierra-1.jpg" alt="Fachada de casa moderna de dos plantas en venta en Zacatecas, Modelo Sierra" loading="lazy" width="1024" height="1024">
+                  <span class="badge">Casa nueva</span>
+                  <span class="gallery-count"><svg class="icon"><use href="#i-image"/></svg> 3 fotos</span>
+                </button>
+                <div class="thumbs" aria-label="Miniaturas del Modelo Sierra"></div>
+              </div>
+              <div class="card-body">
+                <p class="card-kicker">Casa Sam 3</p>
+                <h3 class="card-title">Modelo Sierra</h3>
+                <p class="card-price">$2,150,000 <span>MXN</span></p>
+                <ul class="specs">
+                  <li><svg class="icon"><use href="#i-bed"/></svg><span><strong>3</strong> recámaras</span></li>
+                  <li><svg class="icon"><use href="#i-bath"/></svg><span><strong>2.5</strong> baños</span></li>
+                  <li><svg class="icon"><use href="#i-car"/></svg><span><strong>2</strong> estacionamientos</span></li>
+                  <li><svg class="icon"><use href="#i-area"/></svg><span><strong>155 m²</strong> construcción</span></li>
+                  <li><svg class="icon"><use href="#i-land"/></svg><span><strong>160 m²</strong> terreno</span></li>
+                </ul>
+                <p class="card-desc">Nuestra casa moderna más amplia. El modelo Sierra reúne 155 m² de construcción, 3 recámaras y 2.5 baños para quienes buscan comprar una casa nueva en Zacatecas sin renunciar a espacio ni a un diseño contemporáneo.</p>
+                <div class="card-ctas">
+                  <a class="btn btn-primary btn-block js-cta-form" href="#contacto" data-tipo="casa" data-propiedad="sierra" data-solicitud="informacion" data-track="click_solicitar_informacion" data-track-label="sierra">Quiero información del Modelo Sierra</a>
+                  <a class="btn btn-ghost btn-block js-cta-form" href="#contacto" data-tipo="casa" data-propiedad="sierra" data-solicitud="visita" data-track="click_agendar_visita" data-track-label="sierra"><svg class="icon"><use href="#i-calendar"/></svg> Agendar una visita</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="group-cta">
+            <p>¿Te interesa alguna de nuestras casas en venta en Zacatecas?</p>
+            <a class="btn btn-dark js-cta-form" href="#contacto" data-tipo="casa" data-solicitud="informacion" data-track="click_solicitar_informacion" data-track-label="grupo_casas">Quiero comprar una casa</a>
+          </div>
+        </div>
+        <!-- ▲ FIN GRUPO DE ANUNCIOS 1 — CASAS -->
+
+        <!-- ===============================================================
+             ▶ GRUPO DE ANUNCIOS 2 — DEPARTAMENTOS
+             Keywords relacionadas: departamentos en venta, departamentos en
+             venta en Zacatecas, comprar departamento en Zacatecas,
+             departamentos nuevos en Zacatecas, departamentos modernos.
+             URL final sugerida: ?interes=departamentos#departamentos
+             =============================================================== -->
+        <div class="property-group" id="departamentos" data-group="departamentos">
+          <div class="group-head">
+            <h2 class="group-title"><svg class="icon"><use href="#i-building"/></svg> Departamentos nuevos en venta en Zacatecas</h2>
+            <p class="group-sub">Tres modelos de departamento moderno con estacionamiento, desde <strong>$890,000 MXN</strong>.</p>
+          </div>
+
+          <div class="property-grid">
+
+            <!-- DEPARTAMENTO SAM 1 — MODELO CENTRO -->
+            <article class="property-card" id="modelo-centro" data-type="departamento" data-model="centro"
+                     data-gallery="departamentos/centro-2.jpg|Sala, comedor y cocina del Modelo Centro;departamentos/centro-3.jpg|Recámara del Modelo Centro;departamentos/centro-1.jpg|Edificio y ficha técnica del Modelo Centro">
+              <div class="card-gallery">
+                <button class="media card-main js-open-gallery" type="button" data-ph="departamentos/centro-2.jpg" aria-label="Ver galería del Modelo Centro">
+                  <img src="assets/images/departamentos/centro-2.jpg" alt="Departamento nuevo en venta en Zacatecas de una recámara, Modelo Centro: sala, comedor y cocina" loading="lazy" width="681" height="541">
+                  <span class="badge badge-alt">Departamento nuevo</span>
+                  <span class="gallery-count"><svg class="icon"><use href="#i-image"/></svg> 3 fotos</span>
+                </button>
+                <div class="thumbs" aria-label="Miniaturas del Modelo Centro"></div>
+              </div>
+              <div class="card-body">
+                <p class="card-kicker">Departamento Sam 1</p>
+                <h3 class="card-title">Modelo Centro</h3>
+                <p class="card-price">$890,000 <span>MXN</span></p>
+                <ul class="specs">
+                  <li><svg class="icon"><use href="#i-bed"/></svg><span><strong>1</strong> recámara</span></li>
+                  <li><svg class="icon"><use href="#i-bath"/></svg><span><strong>1</strong> baño</span></li>
+                  <li><svg class="icon"><use href="#i-car"/></svg><span><strong>1</strong> cajón</span></li>
+                  <li><svg class="icon"><use href="#i-area"/></svg><span><strong>55 m²</strong> totales</span></li>
+                </ul>
+                <p class="card-desc">Departamento nuevo en venta en Zacatecas, ideal como primera vivienda o para quien vive solo o en pareja. El modelo Centro aprovecha cada uno de sus 55 m² con una distribución práctica y un cajón de estacionamiento.</p>
+                <div class="card-ctas">
+                  <a class="btn btn-primary btn-block js-cta-form" href="#contacto" data-tipo="departamento" data-propiedad="centro" data-solicitud="informacion" data-track="click_solicitar_informacion" data-track-label="centro">Quiero información del Modelo Centro</a>
+                  <a class="btn btn-ghost btn-block js-cta-form" href="#contacto" data-tipo="departamento" data-propiedad="centro" data-solicitud="visita" data-track="click_agendar_visita" data-track-label="centro"><svg class="icon"><use href="#i-calendar"/></svg> Agendar una visita</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- DEPARTAMENTO SAM 2 — MODELO PLAZA -->
+            <article class="property-card" id="modelo-plaza" data-type="departamento" data-model="plaza"
+                     data-gallery="departamentos/plaza-1.jpg|Edificio de departamentos del Modelo Plaza;departamentos/plaza-2.jpg|Sala y cocina del Modelo Plaza;departamentos/plaza-3.jpg|Recámara del Modelo Plaza">
+              <div class="card-gallery">
+                <button class="media card-main js-open-gallery" type="button" data-ph="departamentos/plaza-1.jpg" aria-label="Ver galería del Modelo Plaza">
+                  <img src="assets/images/departamentos/plaza-1.jpg" alt="Edificio de departamentos modernos de dos recámaras en venta en Zacatecas, Modelo Plaza" loading="lazy" width="1024" height="935">
+                  <span class="badge badge-alt">Departamento nuevo</span>
+                  <span class="gallery-count"><svg class="icon"><use href="#i-image"/></svg> 3 fotos</span>
+                </button>
+                <div class="thumbs" aria-label="Miniaturas del Modelo Plaza"></div>
+              </div>
+              <div class="card-body">
+                <p class="card-kicker">Departamento Sam 2</p>
+                <h3 class="card-title">Modelo Plaza</h3>
+                <p class="card-price">$1,150,000 <span>MXN</span></p>
+                <ul class="specs">
+                  <li><svg class="icon"><use href="#i-bed"/></svg><span><strong>2</strong> recámaras</span></li>
+                  <li><svg class="icon"><use href="#i-bath"/></svg><span><strong>1</strong> baño</span></li>
+                  <li><svg class="icon"><use href="#i-car"/></svg><span><strong>1</strong> cajón</span></li>
+                  <li><svg class="icon"><use href="#i-area"/></svg><span><strong>75 m²</strong> totales</span></li>
+                </ul>
+                <p class="card-desc">Si buscas comprar departamento en Zacatecas con dos recámaras, el modelo Plaza es un departamento moderno de 75 m² con sala-comedor iluminada, cocina funcional y un cajón de estacionamiento.</p>
+                <div class="card-ctas">
+                  <a class="btn btn-primary btn-block js-cta-form" href="#contacto" data-tipo="departamento" data-propiedad="plaza" data-solicitud="informacion" data-track="click_solicitar_informacion" data-track-label="plaza">Quiero información del Modelo Plaza</a>
+                  <a class="btn btn-ghost btn-block js-cta-form" href="#contacto" data-tipo="departamento" data-propiedad="plaza" data-solicitud="visita" data-track="click_agendar_visita" data-track-label="plaza"><svg class="icon"><use href="#i-calendar"/></svg> Agendar una visita</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- DEPARTAMENTO SAM 3 — MODELO MIRADOR -->
+            <article class="property-card" id="modelo-mirador" data-type="departamento" data-model="mirador"
+                     data-gallery="departamentos/mirador-1.jpg|Edificio del Modelo Mirador;departamentos/mirador-2.jpg|Sala con vista a la ciudad del Modelo Mirador;departamentos/mirador-3.jpg|Recámara principal del Modelo Mirador">
+              <div class="card-gallery">
+                <button class="media card-main js-open-gallery" type="button" data-ph="departamentos/mirador-1.jpg" aria-label="Ver galería del Modelo Mirador">
+                  <img src="assets/images/departamentos/mirador-1.jpg" alt="Edificio de departamentos nuevos en venta en Zacatecas, Modelo Mirador de dos recámaras y dos baños" loading="lazy" width="1024" height="935">
+                  <span class="badge badge-alt">Departamento nuevo</span>
+                  <span class="gallery-count"><svg class="icon"><use href="#i-image"/></svg> 3 fotos</span>
+                </button>
+                <div class="thumbs" aria-label="Miniaturas del Modelo Mirador"></div>
+              </div>
+              <div class="card-body">
+                <p class="card-kicker">Departamento Sam 3</p>
+                <h3 class="card-title">Modelo Mirador</h3>
+                <p class="card-price">$1,390,000 <span>MXN</span></p>
+                <ul class="specs">
+                  <li><svg class="icon"><use href="#i-bed"/></svg><span><strong>2</strong> recámaras</span></li>
+                  <li><svg class="icon"><use href="#i-bath"/></svg><span><strong>2</strong> baños</span></li>
+                  <li><svg class="icon"><use href="#i-car"/></svg><span><strong>2</strong> cajones</span></li>
+                  <li><svg class="icon"><use href="#i-area"/></svg><span><strong>90 m²</strong> totales</span></li>
+                </ul>
+                <p class="card-desc">Nuestro departamento más amplio: 90 m², 2 recámaras, 2 baños completos y dos cajones de estacionamiento. Un departamento nuevo en Zacatecas para quienes buscan comodidad y privacidad para cada integrante del hogar.</p>
+                <div class="card-ctas">
+                  <a class="btn btn-primary btn-block js-cta-form" href="#contacto" data-tipo="departamento" data-propiedad="mirador" data-solicitud="informacion" data-track="click_solicitar_informacion" data-track-label="mirador">Quiero información del Modelo Mirador</a>
+                  <a class="btn btn-ghost btn-block js-cta-form" href="#contacto" data-tipo="departamento" data-propiedad="mirador" data-solicitud="visita" data-track="click_agendar_visita" data-track-label="mirador"><svg class="icon"><use href="#i-calendar"/></svg> Agendar una visita</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="group-cta">
+            <p>¿Buscas un departamento en venta en Zacatecas?</p>
+            <a class="btn btn-dark js-cta-form" href="#contacto" data-tipo="departamento" data-solicitud="informacion" data-track="click_solicitar_informacion" data-track-label="grupo_departamentos">Quiero conocer departamentos</a>
+          </div>
+        </div>
+        <!-- ▲ FIN GRUPO DE ANUNCIOS 2 — DEPARTAMENTOS -->
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PRECIOS — tabla comparativa
+         Respalda los textos de anuncio con precio ("desde $…") y reduce
+         clics de baja calidad: quien entra ya conoce el rango de precios.
+         =================================================================== -->
+    <section class="section" id="precios" aria-labelledby="precios-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Precios</p>
+          <h2 id="precios-title">Precios de casas y departamentos en venta en Zacatecas</h2>
+          <p class="section-lead">Compara todos nuestros modelos de vivienda nueva. Precios en pesos mexicanos.</p>
+        </div>
+
+        <div class="price-highlights">
+          <div class="price-hl">
+            <svg class="icon"><use href="#i-house"/></svg>
+            <p>Casas en venta en Zacatecas desde</p>
+            <strong>$1,450,000 MXN</strong>
+          </div>
+          <div class="price-hl">
+            <svg class="icon"><use href="#i-building"/></svg>
+            <p>Departamentos en venta en Zacatecas desde</p>
+            <strong>$890,000 MXN</strong>
+          </div>
+        </div>
+
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de precios (desliza horizontalmente en móvil)">
+          <table class="price-table">
+            <caption class="sr-only">Precios y características de las casas y departamentos de Vive Sam TV</caption>
+            <thead>
+              <tr>
+                <th scope="col">Modelo</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Construcción</th>
+                <th scope="col">Terreno</th>
+                <th scope="col">Recámaras</th>
+                <th scope="col">Baños</th>
+                <th scope="col">Estacionamientos</th>
+                <th scope="col"><span class="sr-only">Acción</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-type="casa">
+                <th scope="row"><a href="#modelo-encino">Encino</a></th><td>Casa</td><td class="td-price">$1,450,000</td><td>95 m²</td><td>105 m²</td><td>2</td><td>1.5</td><td>1</td>
+                <td><a class="table-cta js-cta-form" href="#contacto" data-tipo="casa" data-propiedad="encino" data-solicitud="precios" data-track="click_solicitar_informacion" data-track-label="tabla_encino">Solicitar información</a></td>
+              </tr>
+              <tr data-type="casa">
+                <th scope="row"><a href="#modelo-cantera">Cantera</a></th><td>Casa</td><td class="td-price">$1,780,000</td><td>125 m²</td><td>140 m²</td><td>3</td><td>2</td><td>2</td>
+                <td><a class="table-cta js-cta-form" href="#contacto" data-tipo="casa" data-propiedad="cantera" data-solicitud="precios" data-track="click_solicitar_informacion" data-track-label="tabla_cantera">Solicitar información</a></td>
+              </tr>
+              <tr data-type="casa">
+                <th scope="row"><a href="#modelo-sierra">Sierra</a></th><td>Casa</td><td class="td-price">$2,150,000</td><td>155 m²</td><td>160 m²</td><td>3</td><td>2.5</td><td>2</td>
+                <td><a class="table-cta js-cta-form" href="#contacto" data-tipo="casa" data-propiedad="sierra" data-solicitud="precios" data-track="click_solicitar_informacion" data-track-label="tabla_sierra">Solicitar información</a></td>
+              </tr>
+              <tr data-type="departamento">
+                <th scope="row"><a href="#modelo-centro">Centro</a></th><td>Departamento</td><td class="td-price">$890,000</td><td>55 m²</td><td>—</td><td>1</td><td>1</td><td>1</td>
+                <td><a class="table-cta js-cta-form" href="#contacto" data-tipo="departamento" data-propiedad="centro" data-solicitud="precios" data-track="click_solicitar_informacion" data-track-label="tabla_centro">Solicitar información</a></td>
+              </tr>
+              <tr data-type="departamento">
+                <th scope="row"><a href="#modelo-plaza">Plaza</a></th><td>Departamento</td><td class="td-price">$1,150,000</td><td>75 m²</td><td>—</td><td>2</td><td>1</td><td>1</td>
+                <td><a class="table-cta js-cta-form" href="#contacto" data-tipo="departamento" data-propiedad="plaza" data-solicitud="precios" data-track="click_solicitar_informacion" data-track-label="tabla_plaza">Solicitar información</a></td>
+              </tr>
+              <tr data-type="departamento">
+                <th scope="row"><a href="#modelo-mirador">Mirador</a></th><td>Departamento</td><td class="td-price">$1,390,000</td><td>90 m²</td><td>—</td><td>2</td><td>2</td><td>2</td>
+                <td><a class="table-cta js-cta-form" href="#contacto" data-tipo="departamento" data-propiedad="mirador" data-solicitud="precios" data-track="click_solicitar_informacion" data-track-label="tabla_mirador">Solicitar información</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine-print">Precios de lista en pesos mexicanos. Consulta con un asesor la disponibilidad de cada modelo y las formas de pago.</p>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         ¿POR QUÉ COMPRAR EN VIVE SAM TV? (ancla #nosotros)
+         Argumentos comerciales sin promesas legales/financieras.
+         =================================================================== -->
+    <section class="section section-dark" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow-light">Nosotros</p>
+          <h2 id="nosotros-title">¿Por qué comprar en Vive Sam TV?</h2>
+          <p class="section-lead">Somos una inmobiliaria de Zacatecas dedicada a la venta de vivienda nueva. Nuestro trabajo es ayudarte a elegir y comprar el hogar que se adapta a tu forma de vivir.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card">
+            <svg class="icon"><use href="#i-key"/></svg>
+            <h3>Viviendas nuevas</h3>
+            <p>Estrena una propiedad diseñada para las necesidades actuales: espacios bien distribuidos y acabados contemporáneos.</p>
+          </article>
+          <article class="why-card">
+            <svg class="icon"><use href="#i-pin"/></svg>
+            <h3>Ubicación</h3>
+            <p>Vive en Colonia Quezada, una zona estratégica de Zacatecas con acceso a comercios, escuelas y vialidades.</p>
+          </article>
+          <article class="why-card">
+            <svg class="icon"><use href="#i-layout"/></svg>
+            <h3>Diferentes opciones</h3>
+            <p>Encuentra casas y departamentos con diferentes distribuciones, tamaños y precios en un mismo lugar.</p>
+          </article>
+          <article class="why-card">
+            <svg class="icon"><use href="#i-hand"/></svg>
+            <h3>Acompañamiento</h3>
+            <p>Un asesor te acompaña durante el proceso de compra, desde la primera visita hasta la entrega de tu vivienda.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         CARACTERÍSTICAS Y AMENIDADES
+         =================================================================== -->
+    <section class="section" id="amenidades" aria-labelledby="amenidades-title">
+      <div class="container amenities-layout">
+        <div>
+          <div class="section-head center">
+            <p class="eyebrow">Características y amenidades</p>
+            <h2 id="amenidades-title">Vivienda nueva en Zacatecas pensada para tu día a día</h2>
+            <p class="section-lead">Todas nuestras casas y departamentos comparten un mismo estándar de diseño y comodidad.</p>
+          </div>
+          <ul class="amenities">
+            <li><svg class="icon"><use href="#i-sparkle"/></svg> Viviendas nuevas</li>
+            <li><svg class="icon"><use href="#i-house"/></svg> Diseño moderno</li>
+            <li><svg class="icon"><use href="#i-layout"/></svg> Espacios funcionales</li>
+            <li><svg class="icon"><use href="#i-tree"/></svg> Áreas verdes</li>
+            <li><svg class="icon"><use href="#i-car"/></svg> Estacionamiento</li>
+            <li><svg class="icon"><use href="#i-shield"/></svg> Acceso controlado</li>
+            <li><svg class="icon"><use href="#i-shop"/></svg> Cercanía a servicios</li>
+            <li><svg class="icon"><use href="#i-building"/></svg> Casas y departamentos</li>
+            <li><svg class="icon"><use href="#i-bed"/></svg> Opciones de 1, 2 y 3 recámaras</li>
+          </ul>
+          <p class="amenities-cta"><a class="btn btn-primary js-cta-form" href="#contacto" data-solicitud="visita" data-track="click_agendar_visita" data-track-label="amenidades"><svg class="icon"><use href="#i-calendar"/></svg> Agendar una visita</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PROCESO DE COMPRA — reduce fricción antes del formulario
+         =================================================================== -->
+    <section class="section section-alt" id="proceso" aria-labelledby="proceso-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Cómo comprar</p>
+          <h2 id="proceso-title">Comprar tu casa o departamento, paso a paso</h2>
+        </div>
+        <ol class="steps">
+          <li><span class="step-n">1</span><h3>Elige tu modelo</h3><p>Compara casas y departamentos, precios y metros cuadrados.</p></li>
+          <li><span class="step-n">2</span><h3>Solicita información</h3><p>Déjanos tus datos o escríbenos por WhatsApp.</p></li>
+          <li><span class="step-n">3</span><h3>Agenda una visita</h3><p>Conoce la vivienda y la zona con un asesor de Vive Sam TV.</p></li>
+          <li><span class="step-n">4</span><h3>Estrena tu hogar</h3><p>Te acompañamos en el proceso de compra hasta la entrega.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         UBICACIÓN — mapa simulado (sin API keys)
+         Dirección ficticia dentro de Zacatecas, Zacatecas.
+         =================================================================== -->
+    <section class="section" id="ubicacion" aria-labelledby="ubicacion-title">
+      <div class="container location-layout">
+        <div class="location-info">
+          <p class="eyebrow">Visítanos</p>
+          <h2 id="ubicacion-title">Estamos en Colonia Quezada, Zacatecas</h2>
+          <address class="address-card">
+            <svg class="icon"><use href="#i-pin"/></svg>
+            <span>
+              <strong>Av. del Encino #245</strong><br>
+              Colonia Quezada<br>
+              Zacatecas, Zacatecas, México
+            </span>
+          </address>
+          <ul class="hours">
+            <li><span>Lunes a viernes</span><span>9:00 – 19:00</span></li>
+            <li><span>Sábado</span><span>10:00 – 15:00</span></li>
+            <li><span>Domingo</span><span>Visitas con cita</span></li>
+          </ul>
+          <div class="location-ctas">
+            <a class="btn btn-primary js-cta-form" href="#contacto" data-solicitud="visita" data-track="click_agendar_visita" data-track-label="ubicacion"><svg class="icon"><use href="#i-calendar"/></svg> Agendar una visita</a>
+            <a class="btn btn-ghost js-phone-link" href="tel:+524981060429" data-track="click_phone" data-track-location="ubicacion"><svg class="icon"><use href="#i-phone"/></svg> Llamar a un asesor</a>
+          </div>
+        </div>
+
+        <!-- Mapa ilustrativo (no es una integración de Google Maps) -->
+        <figure class="map" aria-label="Mapa ilustrativo de la ubicación de Vive Sam TV en Colonia Quezada, Zacatecas">
+          <svg viewBox="0 0 600 440" role="img" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <rect width="600" height="440" class="map-bg"/>
+            <path class="map-park" d="M60 290h140v110H60z"/>
+            <path class="map-park" d="M420 40h130v90H420z"/>
+            <g class="map-block">
+              <rect x="60" y="40" width="140" height="110" rx="6"/><rect x="230" y="40" width="160" height="110" rx="6"/>
+              <rect x="60" y="180" width="140" height="80" rx="6"/><rect x="230" y="180" width="160" height="80" rx="6"/>
+              <rect x="420" y="160" width="130" height="100" rx="6"/><rect x="230" y="290" width="160" height="110" rx="6"/>
+              <rect x="420" y="290" width="130" height="110" rx="6"/>
+            </g>
+            <path class="map-road-main" d="M0 275h600"/>
+            <path class="map-road" d="M215 0v440M405 0v440M0 165h600"/>
+            <path class="map-road-alt" d="M0 420 600 20" />
+            <text x="24" y="268" class="map-label">Av. del Encino</text>
+            <text x="232" y="160" class="map-label small">Col. Quezada</text>
+            <text x="470" y="92" class="map-label small">Parque</text>
+            <text x="88" y="350" class="map-label small">Área verde</text>
+            <text x="440" y="436" class="map-label small">→ Centro de Zacatecas</text>
+            <g class="map-pin" transform="translate(308 275)">
+              <circle r="26" class="pin-halo"/>
+              <path d="M0 0C-10-12-16-20-16-28a16 16 0 0 1 32 0C16-20 10-12 0 0Z" class="pin-body"/>
+              <circle cy="-28" r="6" class="pin-dot"/>
+            </g>
+          </svg>
+          <figcaption><strong>Vive Sam TV</strong> · Av. del Encino #245, Col. Quezada, Zacatecas</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PREGUNTAS FRECUENTES
+         La última pregunta aclara que NO hay propiedades en renta: sirve para
+         explicar por qué "renta", "rentar" y "alquiler" son palabras clave
+         negativas de la campaña.
+         =================================================================== -->
+    <section class="section section-alt" id="preguntas-frecuentes" aria-labelledby="faq-title">
+      <div class="container container-narrow">
+        <div class="section-head center">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2 id="faq-title">Resolvemos tus dudas sobre nuestras viviendas</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary><h3>¿Venden casas nuevas en Zacatecas?</h3><svg class="icon"><use href="#i-plus"/></svg></summary>
+            <p>Sí. En Vive Sam TV tenemos tres modelos de casas nuevas en venta en Colonia Quezada, Zacatecas: Encino, Cantera y Sierra, de 2 y 3 recámaras. <a href="#casas" data-filter-link="casas">Ver casas en venta</a>.</p>
+          </details>
+          <details>
+            <summary><h3>¿Qué departamentos tienen disponibles?</h3><svg class="icon"><use href="#i-plus"/></svg></summary>
+            <p>Contamos con tres modelos de departamentos nuevos: Centro (1 recámara, 55 m²), Plaza (2 recámaras, 75 m²) y Mirador (2 recámaras y 2 baños, 90 m²). <a href="#departamentos" data-filter-link="departamentos">Ver departamentos en venta</a>.</p>
+          </details>
+          <details>
+            <summary><h3>¿Dónde están ubicadas las propiedades?</h3><svg class="icon"><use href="#i-plus"/></svg></summary>
+            <p>Nuestras casas y departamentos se encuentran en Colonia Quezada, dentro de la ciudad de Zacatecas. Nuestra oficina está en Av. del Encino #245, Colonia Quezada, Zacatecas, Zacatecas.</p>
+          </details>
+          <details>
+            <summary><h3>¿Cuánto cuesta una casa en Vive Sam TV?</h3><svg class="icon"><use href="#i-plus"/></svg></summary>
+            <p>Nuestras casas en venta van desde $1,450,000 MXN (Modelo Encino) hasta $2,150,000 MXN (Modelo Sierra). Puedes comparar todos los modelos en la <a href="#precios">tabla de precios</a>.</p>
+          </details>
+          <details>
+            <summary><h3>¿Cuánto cuesta un departamento?</h3><svg class="icon"><use href="#i-plus"/></svg></summary>
+            <p>Nuestros departamentos en venta van desde $890,000 MXN (Modelo Centro) hasta $1,390,000 MXN (Modelo Mirador).</p>
+          </details>
+          <details>
+            <summary><h3>¿Puedo agendar una visita?</h3><svg class="icon"><use href="#i-plus"/></svg></summary>
+            <p>Claro. Llena el <a href="#contacto" class="js-cta-form" data-solicitud="visita">formulario de contacto</a> o escríbenos por WhatsApp y un asesor te propondrá un horario para conocer la vivienda que te interesa.</p>
+          </details>
+          <details>
+            <summary><h3>¿Las propiedades son de venta o renta?</h3><svg class="icon"><use href="#i-plus"/></svg></summary>
+            <p><strong>Vive Sam TV actualmente ofrece únicamente propiedades en venta. No contamos con propiedades en renta.</strong> Todas nuestras casas y departamentos son viviendas nuevas disponibles para compra.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         FORMULARIO DE CONTACTO — ★ CONVERSIÓN PRIMARIA ★
+         Evento al enviar con éxito: generate_lead (dataLayer) → en GTM se
+         dispara la conversión de Google Ads y el evento de GA4.
+         Campos ocultos: guardan UTM y gclid para atribuir el lead a la
+         campaña / grupo de anuncios / keyword que lo generó.
+         =================================================================== -->
+    <section class="section contact" id="contacto" aria-labelledby="contacto-title">
+      <div class="container contact-layout">
+        <div class="contact-intro">
+          <p class="eyebrow eyebrow-light">Contacto</p>
+          <h2 id="contacto-title">¿Quieres conocer tu próxima vivienda?</h2>
+          <p>Déjanos tus datos y un asesor de Vive Sam TV se pondrá en contacto contigo para brindarte información sobre nuestras casas y departamentos en venta en Zacatecas.</p>
+          <ul class="contact-points">
+            <li><svg class="icon"><use href="#i-check"/></svg> Precios y disponibilidad de cada modelo</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> Visitas con cita en Colonia Quezada</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> Atención personalizada de un asesor</li>
+          </ul>
+          <div class="contact-alt">
+            <p>¿Prefieres hablar con alguien ahora?</p>
+            <a class="contact-link js-phone-link" href="tel:+524981060429" data-track="click_phone" data-track-location="contacto"><svg class="icon"><use href="#i-phone"/></svg> <span class="js-phone-text">498 106 0429</span></a>
+            <a class="contact-link js-whatsapp-link" href="https://wa.me/WHATSAPP_NUMBER_HERE" target="_blank" rel="noopener" data-track="click_whatsapp" data-track-location="contacto"><svg class="icon"><use href="#i-chat"/></svg> Cotiza por WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form id="lead-form" class="lead-form" novalidate data-form-id="contacto_vive_sam">
+            <div class="field">
+              <label for="f-nombre">Nombre completo <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-nombre" name="nombre" type="text" autocomplete="name" required minlength="3" placeholder="Ej. Ana López Martínez">
+              <p class="field-error" id="e-nombre" role="alert"></p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-telefono">Teléfono <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required placeholder="10 dígitos">
+                <p class="field-error" id="e-telefono" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="f-email">Correo electrónico</label>
+                <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
+                <p class="field-error" id="e-email" role="alert"></p>
+              </div>
+            </div>
+
+            <fieldset class="field">
+              <legend>¿Qué estás buscando? <span class="req" aria-hidden="true">*</span></legend>
+              <div class="choice-group">
+                <label class="choice"><input type="radio" name="tipo" value="casa" required><span><svg class="icon"><use href="#i-house"/></svg> Casa</span></label>
+                <label class="choice"><input type="radio" name="tipo" value="departamento"><span><svg class="icon"><use href="#i-building"/></svg> Departamento</span></label>
+              </div>
+              <p class="field-error" id="e-tipo" role="alert"></p>
+            </fieldset>
+
+            <div class="field">
+              <label for="f-propiedad">Propiedad de interés</label>
+              <select id="f-propiedad" name="propiedad">
+                <option value="aun-no-lo-se">Aún no lo sé</option>
+                <optgroup label="Casas" data-tipo="casa">
+                  <option value="encino">Modelo Encino — Casa · $1,450,000 MXN</option>
+                  <option value="cantera">Modelo Cantera — Casa · $1,780,000 MXN</option>
+                  <option value="sierra">Modelo Sierra — Casa · $2,150,000 MXN</option>
+                </optgroup>
+                <optgroup label="Departamentos" data-tipo="departamento">
+                  <option value="centro">Modelo Centro — Depto. · $890,000 MXN</option>
+                  <option value="plaza">Modelo Plaza — Depto. · $1,150,000 MXN</option>
+                  <option value="mirador">Modelo Mirador — Depto. · $1,390,000 MXN</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="f-mensaje">Mensaje</label>
+              <textarea id="f-mensaje" name="mensaje" rows="3" placeholder="Cuéntanos qué buscas o qué día te gustaría visitarnos"></textarea>
+            </div>
+
+            <!-- CAMPOS OCULTOS PARA ATRIBUCIÓN (se llenan desde la URL en js/script.js) -->
+            <input type="hidden" name="solicitud" value="informacion">
+            <input type="hidden" name="utm_source">
+            <input type="hidden" name="utm_medium">
+            <input type="hidden" name="utm_campaign">
+            <input type="hidden" name="utm_term">
+            <input type="hidden" name="utm_content">
+            <input type="hidden" name="gclid">
+            <input type="hidden" name="landing_url">
+            <!-- Honeypot anti-spam: los humanos no lo ven ni lo llenan -->
+            <div class="hp" aria-hidden="true"><label>No llenar <input type="text" name="empresa" tabindex="-1" autocomplete="off"></label></div>
+
+            <!-- ★ CTA DE CONVERSIÓN PRIMARIA ★ -->
+            <button class="btn btn-primary btn-lg btn-block" type="submit" id="submit-btn">
+              <span class="btn-label">Solicitar información</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+            <p class="form-legal">Al enviar aceptas que un asesor de Vive Sam TV te contacte para darte información sobre las viviendas. Sitio demostrativo: no se almacenan tus datos.</p>
+          </form>
+
+          <!-- MENSAJE DE ÉXITO — momento exacto en que se registra la conversión -->
+          <div class="form-success" id="form-success" hidden tabindex="-1">
+            <span class="success-icon"><svg class="icon"><use href="#i-check"/></svg></span>
+            <h3>¡Gracias por contactar a Vive Sam TV!</h3>
+            <p>Hemos recibido tu solicitud.<br>Un asesor se pondrá en contacto contigo próximamente.</p>
+            <div class="success-ctas">
+              <a class="btn btn-whatsapp js-whatsapp-link" href="https://wa.me/WHATSAPP_NUMBER_HERE" target="_blank" rel="noopener" data-track="click_whatsapp" data-track-location="gracias"><svg class="icon"><use href="#i-chat"/></svg> Cotiza por WhatsApp</a>
+              <button class="btn btn-ghost" type="button" id="form-reset">Enviar otra solicitud</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo logo-light" href="#inicio" aria-label="Vive Sam TV — inicio">
+          <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M6 19 20 7l14 12" /><path d="M11 16v16h18V16" /><path d="M17 32v-8h6v8" /></svg></span>
+          <span class="logo-text">Vive <strong>Sam TV</strong></span>
+        </a>
+        <p class="footer-tagline">Tu próximo hogar comienza aquí.</p>
+        <p>Casas y departamentos en venta en Zacatecas.</p>
+        <p class="footer-address"><svg class="icon"><use href="#i-pin"/></svg> Colonia Quezada, Zacatecas, Zacatecas</p>
+      </div>
+      <nav class="footer-nav" aria-label="Enlaces del sitio">
+        <h2 class="footer-h">Enlaces</h2>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#casas" data-filter-link="casas">Casas</a></li>
+          <li><a href="#departamentos" data-filter-link="departamentos">Departamentos</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h2 class="footer-h">Contacto</h2>
+        <ul>
+          <li><a class="js-phone-link" href="tel:+524981060429" data-track="click_phone" data-track-location="footer"><svg class="icon"><use href="#i-phone"/></svg> <span class="js-phone-text">498 106 0429</span></a></li>
+          <li><a class="js-whatsapp-link" href="https://wa.me/WHATSAPP_NUMBER_HERE" target="_blank" rel="noopener" data-track="click_whatsapp" data-track-location="footer"><svg class="icon"><use href="#i-chat"/></svg> Cotiza por WhatsApp</a></li>
+          <li><a class="js-cta-form" href="#contacto" data-solicitud="visita" data-track="click_agendar_visita" data-track-label="footer"><svg class="icon"><use href="#i-calendar"/></svg> Agendar una visita</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="disclaimer">Vive Sam TV es un proyecto ficticio creado con fines demostrativos y educativos. Propiedades, precios, dirección, disponibilidad y características no son reales.</p>
+      <p>© <span id="year">2026</span> Vive Sam TV · Proyecto ficticio creado con fines demostrativos y educativos.</p>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       BOTÓN FLOTANTE DE WHATSAPP — CONVERSIÓN SECUNDARIA (click_whatsapp)
+       El número se configura en js/tracking.js → WHATSAPP_NUMBER.
+       ===================================================================== -->
+  <a class="whatsapp-float js-whatsapp-link" href="https://wa.me/WHATSAPP_NUMBER_HERE" target="_blank" rel="noopener" data-track="click_whatsapp" data-track-location="boton_flotante" aria-label="Cotiza por WhatsApp">
+    <svg class="icon"><use href="#i-chat"/></svg><span>Cotiza por WhatsApp</span>
+  </a>
+
+  <!-- GALERÍA (lightbox) -->
+  <dialog class="lightbox" id="lightbox" aria-label="Galería de fotos">
+    <div class="lb-inner">
+      <button class="lb-close" type="button" id="lb-close" aria-label="Cerrar galería"><svg class="icon"><use href="#i-close"/></svg></button>
+      <div class="lb-stage media" id="lb-stage" data-ph="">
+        <img id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+      </div>
+      <button class="lb-nav lb-prev" type="button" id="lb-prev" aria-label="Foto anterior"><svg class="icon"><use href="#i-chev-l"/></svg></button>
+      <button class="lb-nav lb-next" type="button" id="lb-next" aria-label="Foto siguiente"><svg class="icon"><use href="#i-chev-r"/></svg></button>
+      <div class="lb-caption"><span id="lb-title"></span><span id="lb-counter"></span></div>
+    </div>
+  </dialog>
+
+  <script src="js/script.js?v=5" defer></script>
+</body>
+</html>
