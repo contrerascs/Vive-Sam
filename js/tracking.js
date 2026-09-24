@@ -9,9 +9,12 @@
      3. (Opcional) Si NO usas GTM, llena GA4_ID / ADS_ID / etiquetas y el
         sitio cargará gtag.js directamente (USE_GTAG_DIRECT = true).
 
-   ESTADO ACTUAL: la etiqueta de Google de la cuenta de Google Ads
-   AW-17346716536 ya está instalada (en el <head> de index.html). Falta
-   pegar la etiqueta ("Label") de cada acción de conversión, abajo.
+   ESTADO ACTUAL:
+     · Etiqueta de Google de la cuenta AW-17346716536 → instalada en el
+       <head> de index.html.
+     · Conversión "Enviar formulario de clientes potenciales" → activa:
+       se dispara al enviar el formulario de #contacto.
+     · Conversiones de WhatsApp y llamada → pendientes de su etiqueta.
    Mientras un valor siga siendo placeholder (contiene "X" o "_HERE"),
    esa parte no se activa. Agrega ?debug=1 a la URL para ver en pantalla
    cada evento que se dispara (útil para explicarlo en clase).
@@ -35,10 +38,16 @@ window.VIVE_SAM_CONFIG = {
   // dice: send_to: 'AW-17346716536/AbC-D_efGhIjKlMnOp'
   // Copia SOLO la parte de después de la diagonal y pégala aquí.
   ADS_CONVERSION_LABELS: {
-    generate_lead: 'LABEL_FORMULARIO_HERE',   // ★ Conversión primaria: formulario enviado
+    // ★ Conversión primaria — "Enviar formulario de clientes potenciales"
+    // Se dispara al enviar el formulario de #contacto con datos válidos.
+    generate_lead: 'xEPvCLfv64AdEPjGx89A',
     click_whatsapp: 'LABEL_WHATSAPP_HERE',    // Conversión secundaria: clic en WhatsApp
     click_phone: 'LABEL_TELEFONO_HERE'        // Conversión secundaria: clic en el teléfono
   },
+
+  // Valor y moneda que se envían con la conversión del formulario.
+  LEAD_VALUE: 1.0,
+  LEAD_CURRENCY: 'MXN',
 
   // --- Datos de contacto (teléfono real; WhatsApp sigue como placeholder) ---
   WHATSAPP_NUMBER: 'WHATSAPP_NUMBER_HERE',    // Formato wa.me: 52 + 10 dígitos, sin espacios ni "+"
@@ -147,6 +156,31 @@ window.VIVE_SAM_CONFIG = {
         showDebug(name, params);
       }
     }
+  };
+
+  /* ------------------------------------------------------------------
+     gtag_report_conversion(url)
+     Es la función que Google Ads entrega junto con el "fragmento de
+     evento" de la conversión. Aquí se conserva por dos motivos:
+       1. Para explicar en clase de dónde sale ese código.
+       2. Para probar la conversión a mano desde la consola del navegador:
+          gtag_report_conversion()
+     La página NO la necesita: el formulario dispara la conversión solo,
+     a través de VSTrack.event('generate_lead', …) en js/script.js.
+     Si se quisiera medir un enlace con ella, se usa así:
+       <a href="pagina.html" onclick="return gtag_report_conversion('pagina.html')">
+     ------------------------------------------------------------------ */
+  window.gtag_report_conversion = function (url) {
+    var callback = function () {
+      if (typeof (url) !== 'undefined') { window.location = url; }
+    };
+    window.gtag('event', 'conversion', {
+      send_to: C.ADS_ID + '/' + C.ADS_CONVERSION_LABELS.generate_lead,
+      value: C.LEAD_VALUE,
+      currency: C.LEAD_CURRENCY,
+      event_callback: callback
+    });
+    return false;
   };
 
   function showDebug(name, params) {

@@ -436,8 +436,8 @@
         tipo_vivienda: data.tipo,
         propiedad: data.propiedad,
         solicitud: data.solicitud,
-        value: 1,
-        currency: 'MXN',
+        value: C.LEAD_VALUE || 1,
+        currency: C.LEAD_CURRENCY || 'MXN',
         utm_campaign: data.utm_campaign || '(sin campaña)',
         utm_term: data.utm_term || ''
       });

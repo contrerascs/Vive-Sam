@@ -103,9 +103,20 @@ Cada modelo tiene su propio ancla (`#modelo-encino`, `#modelo-cantera`, `#modelo
 
 ## 4. Qué está preparado para Google Ads
 
-### 4.1 Crear una conversión y conectarla (para la demostración en clase)
+### 4.1 Conversiones de Google Ads
 
-La etiqueta de Google ya está puesta. Falta el segundo paso: crear la acción de conversión y pegar su etiqueta.
+| Acción de conversión | Evento de la página | Etiqueta | Estado |
+|---|---|---|---|
+| Enviar formulario de clientes potenciales | `generate_lead` (envío del formulario de `#contacto`, valor 1 MXN) | `xEPvCLfv64AdEPjGx89A` | ✅ Activa |
+| Clic en WhatsApp | `click_whatsapp` | `LABEL_WHATSAPP_HERE` | Pendiente |
+| Clic en el teléfono | `click_phone` | `LABEL_TELEFONO_HERE` | Pendiente |
+
+La página dispara la conversión sola, en `VSTrack.event()` (`js/tracking.js`): **no hace falta pegar el
+fragmento de evento en el HTML ni poner `onclick` en el botón**. Aun así, `tracking.js` deja disponible la
+función `gtag_report_conversion(url)` que entrega Google Ads, para explicarla en clase o para probar la
+conversión a mano desde la consola del navegador.
+
+#### Cómo agregar las que faltan (WhatsApp y llamada)
 
 1. En Google Ads: **Objetivos → Conversiones → Acciones de conversión → Nueva → Sitio web**.
 2. Escribe el dominio y elige **Agregar manualmente la conversión**.
@@ -118,18 +129,16 @@ La etiqueta de Google ya está puesta. Falta el segundo paso: crear la acción d
    gtag('event', 'conversion', {'send_to': 'AW-17346716536/AbC-D_efGhIjKlMnOp'});
    ```
 
-4. Copia **solo lo que va después de la diagonal** (`AbC-D_efGhIjKlMnOp`) y pégalo en `js/tracking.js`:
+4. Copia **solo lo que va después de la diagonal** (`AbC-D_efGhIjKlMnOp`) y pégalo en `js/tracking.js`,
+   en la línea del evento que le corresponda:
 
    ```js
    ADS_CONVERSION_LABELS: {
-     generate_lead:  'AbC-D_efGhIjKlMnOp',   // Formulario enviado
-     click_whatsapp: 'LABEL_WHATSAPP_HERE',
+     generate_lead:  'xEPvCLfv64AdEPjGx89A',  // ✅ Formulario enviado
+     click_whatsapp: 'AbC-D_efGhIjKlMnOp',    // ← aquí la de WhatsApp
      click_phone:    'LABEL_TELEFONO_HERE'
    },
    ```
-
-No hay que pegar el fragmento de evento en el HTML: la página ya lo dispara sola en el momento correcto
-(al enviar el formulario, al tocar WhatsApp o al tocar el teléfono), con `value` y `currency`.
 
 5. Comprueba con la extensión **Google Tag Assistant** o con `?debug=1`: al enviar el formulario, la consola
    muestra `CONVERSIÓN enviada a Google Ads` con el `send_to` usado.
