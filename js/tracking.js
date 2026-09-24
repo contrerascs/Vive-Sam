@@ -9,9 +9,11 @@
      3. (Opcional) Si NO usas GTM, llena GA4_ID / ADS_ID / etiquetas y el
         sitio cargará gtag.js directamente (USE_GTAG_DIRECT = true).
 
-   Mientras los valores sigan siendo placeholders (contienen "X" o "_HERE"),
-   no se carga ningún script externo: los eventos solo se envían al
-   dataLayer y a la consola. Agrega ?debug=1 a la URL para ver en pantalla
+   ESTADO ACTUAL: la etiqueta de Google de la cuenta de Google Ads
+   AW-17346716536 ya está instalada (en el <head> de index.html). Falta
+   pegar la etiqueta ("Label") de cada acción de conversión, abajo.
+   Mientras un valor siga siendo placeholder (contiene "X" o "_HERE"),
+   esa parte no se activa. Agrega ?debug=1 a la URL para ver en pantalla
    cada evento que se dispara (útil para explicarlo en clase).
    ========================================================================== */
 
@@ -19,14 +21,23 @@ window.VIVE_SAM_CONFIG = {
   // --- Google Tag Manager (método recomendado) ---
   GTM_ID: 'GTM-XXXXXXX',
 
-  // --- Solo si se implementa gtag.js directamente (sin GTM) ---
-  USE_GTAG_DIRECT: false,
-  GA4_ID: 'G-XXXXXXXXXX',
-  ADS_ID: 'AW-XXXXXXXXXX',
+  // --- gtag.js directo (sin GTM) ---
+  // La etiqueta de Google (AW-17346716536) ya está pegada en el <head> de
+  // index.html, tal como la entrega Google Ads. Con USE_GTAG_DIRECT en true,
+  // los eventos de la página se envían por esa misma etiqueta.
+  USE_GTAG_DIRECT: true,
+  GA4_ID: 'G-XXXXXXXXXX',                     // Pendiente: ID de medición de GA4
+  ADS_ID: 'AW-17346716536',                   // ✅ Cuenta de Google Ads
+
+  // Etiqueta ("Label") de cada acción de conversión.
+  // Se obtiene en Google Ads → Objetivos → Conversiones → [acción] →
+  // "Configurar la etiqueta" → Instalar manualmente. El fragmento de evento
+  // dice: send_to: 'AW-17346716536/AbC-D_efGhIjKlMnOp'
+  // Copia SOLO la parte de después de la diagonal y pégala aquí.
   ADS_CONVERSION_LABELS: {
-    generate_lead: 'LABEL_FORMULARIO_HERE',   // Conversión primaria: formulario enviado
-    click_whatsapp: 'LABEL_WHATSAPP_HERE',    // Conversión secundaria
-    click_phone: 'LABEL_TELEFONO_HERE'        // Conversión secundaria
+    generate_lead: 'LABEL_FORMULARIO_HERE',   // ★ Conversión primaria: formulario enviado
+    click_whatsapp: 'LABEL_WHATSAPP_HERE',    // Conversión secundaria: clic en WhatsApp
+    click_phone: 'LABEL_TELEFONO_HERE'        // Conversión secundaria: clic en el teléfono
   },
 
   // --- Datos de contacto (teléfono real; WhatsApp sigue como placeholder) ---
@@ -53,8 +64,10 @@ window.VIVE_SAM_CONFIG = {
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
 
   /* ------------------------------------------------------------------
-     Consent Mode v2 (valores por defecto). Si se agrega un banner de
-     cookies, actualizar con gtag('consent','update',{...}) al aceptar.
+     Consent Mode v2 (valores por defecto).
+     Si más adelante se agrega un banner de cookies, este bloque debe
+     moverse al <head> de index.html ANTES del gtag('config', 'AW-…'),
+     y actualizarse con gtag('consent','update',{...}) cuando el usuario acepte.
      ------------------------------------------------------------------ */
   window.gtag('consent', 'default', {
     ad_storage: 'granted', analytics_storage: 'granted',
@@ -73,18 +86,28 @@ window.VIVE_SAM_CONFIG = {
   }
 
   /* ------------------------------------------------------------------
-     Alternativa: gtag.js directo (GA4 + Google Ads) sin GTM
+     gtag.js directo (Google Ads + GA4) sin GTM
+     Si la etiqueta de Google ya está pegada en el <head> (como ocurre con
+     AW-17346716536), no se vuelve a cargar: solo se configuran los IDs
+     que falten. Así nunca se duplica la etiqueta.
      ------------------------------------------------------------------ */
   var gtagDirect = C.USE_GTAG_DIRECT && (!isPlaceholder(C.GA4_ID) || !isPlaceholder(C.ADS_ID));
   if (gtagDirect) {
-    var firstId = !isPlaceholder(C.GA4_ID) ? C.GA4_ID : C.ADS_ID;
-    var g = document.createElement('script');
-    g.async = true;
-    g.src = 'https://www.googletagmanager.com/gtag/js?id=' + firstId;
-    document.head.appendChild(g);
-    window.gtag('js', new Date());
-    if (!isPlaceholder(C.GA4_ID)) window.gtag('config', C.GA4_ID);
-    if (!isPlaceholder(C.ADS_ID)) window.gtag('config', C.ADS_ID);
+    // ¿La etiqueta de Google ya viene pegada en el <head> de index.html?
+    var yaCargada = !!document.querySelector('script[src*="googletagmanager.com/gtag/js"]');
+    var scriptsEnLinea = Array.prototype.map.call(document.querySelectorAll('script:not([src])'), function (n) { return n.textContent; }).join(' ');
+    var yaConfigurado = function (id) { return scriptsEnLinea.indexOf(id) !== -1; };
+
+    if (!yaCargada) {
+      var firstId = !isPlaceholder(C.GA4_ID) ? C.GA4_ID : C.ADS_ID;
+      var g = document.createElement('script');
+      g.async = true;
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=' + firstId;
+      document.head.appendChild(g);
+      window.gtag('js', new Date());
+    }
+    if (!isPlaceholder(C.GA4_ID) && !yaConfigurado(C.GA4_ID)) window.gtag('config', C.GA4_ID);
+    if (!isPlaceholder(C.ADS_ID) && !yaConfigurado(C.ADS_ID)) window.gtag('config', C.ADS_ID);
   }
 
   var debug = /[?&]debug=1\b/.test(location.search);
@@ -103,9 +126,19 @@ window.VIVE_SAM_CONFIG = {
 
       if (gtagDirect) {
         window.gtag('event', name, params);
+
+        /* CONVERSIÓN DE GOOGLE ADS
+           Si el evento tiene etiqueta configurada arriba, se envía como
+           conversión a la cuenta AW-…  (es el "fragmento de evento" que
+           Google Ads pide instalar en la acción de conversión). */
         var label = C.ADS_CONVERSION_LABELS[name];
         if (!isPlaceholder(C.ADS_ID) && !isPlaceholder(label)) {
-          window.gtag('event', 'conversion', { send_to: C.ADS_ID + '/' + label });
+          var conv = { send_to: C.ADS_ID + '/' + label };
+          if (params.value) { conv.value = params.value; conv.currency = params.currency || 'MXN'; }
+          window.gtag('event', 'conversion', conv);
+          if (debug) console.info('[Vive Sam TV · CONVERSIÓN enviada a Google Ads]', conv);
+        } else if (label && debug) {
+          console.warn('[Vive Sam TV] Evento "' + name + '": falta la etiqueta de conversión en js/tracking.js (ADS_CONVERSION_LABELS).');
         }
       }
 

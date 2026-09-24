@@ -33,16 +33,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css?v=6">
 
   <!-- =====================================================================
-       MEDICIÓN: GOOGLE TAG MANAGER / GA4 / GOOGLE ADS
+       ★ ETIQUETA DE GOOGLE (gtag.js) — CUENTA DE GOOGLE ADS AW-17346716536
+       Este es el código tal como lo entrega Google Ads en
+       Herramientas → Conversiones → Etiqueta de Google. Va en el <head>
+       de TODAS las páginas del sitio y es lo que permite que Google Ads
+       reconozca las conversiones y arme las audiencias de remarketing.
+       ===================================================================== -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17346716536"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17346716536');
+  </script>
+
+  <!-- =====================================================================
+       MEDICIÓN DEL SITIO: eventos, GTM y GA4
        Toda la configuración (IDs, etiquetas de conversión, número de
        WhatsApp y teléfono) vive en js/tracking.js → objeto VIVE_SAM_CONFIG.
-       tracking.js carga GTM automáticamente cuando GTM_ID deja de ser el
-       placeholder "GTM-XXXXXXX". Se carga en <head> como recomienda Google.
+       Ahí también se indica qué etiqueta de conversión de Google Ads
+       corresponde a cada evento (formulario, WhatsApp, llamada).
+       tracking.js detecta la etiqueta de Google de arriba y NO la carga
+       dos veces. Carga GTM solo cuando GTM_ID deja de ser el placeholder.
        ===================================================================== -->
-  <script src="js/tracking.js?v=5"></script>
+  <script src="js/tracking.js?v=6"></script>
 </head>
 <body>
   <!-- GTM (noscript): reemplazar GTM-XXXXXXX por el ID real del contenedor -->
@@ -878,6 +897,6 @@
     </div>
   </dialog>
 
-  <script src="js/script.js?v=5" defer></script>
+  <script src="js/script.js?v=6" defer></script>
 </body>
 </html>

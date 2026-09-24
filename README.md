@@ -50,15 +50,16 @@ toda la configuración de medición.
 |---|---|
 | `GTM-XXXXXXX` | ID del contenedor de Google Tag Manager (también en el `<noscript>` de `index.html`) |
 | `G-XXXXXXXXXX` | ID de medición de GA4 (solo si no usas GTM) |
-| `AW-XXXXXXXXXX` + `LABEL_*_HERE` | ID y etiquetas de conversión de Google Ads (solo si no usas GTM) |
+| `LABEL_FORMULARIO_HERE` y demás `LABEL_*_HERE` | Etiquetas de cada acción de conversión de Google Ads (ver §4.1) |
 | `WHATSAPP_NUMBER_HERE` | Número para wa.me (52 + 10 dígitos, sin “+”) |
 | `PHONE_NUMBER` / `PHONE_DISPLAY` | ✅ Configurado: +52 498 106 0429 (cámbialo aquí si lo necesitas) |
 | `FORM_ENDPOINT` | URL de Formspree / Getform / Apps Script. Vacío = envío simulado |
 | `THANK_YOU_URL` | Opcional: redirigir a una página de gracias en vez de mostrar el mensaje |
 | `https://TU_USUARIO.github.io/vive-sam/` | URL canónica en `<head>` |
 
-Mientras los placeholders sigan ahí, **no se carga ningún script externo** y los clics en teléfono/WhatsApp
-muestran un aviso en lugar de abrir un enlace roto (el evento se mide igual).
+La **etiqueta de Google de la cuenta `AW-17346716536` ya está instalada** en el `<head>` de `index.html`,
+tal como la entrega Google Ads. Los demás placeholders siguen inactivos: no cargan scripts externos, y los
+clics en WhatsApp muestran un aviso en lugar de abrir un enlace roto (el evento se mide igual).
 
 La página tiene `noindex` para que Google no la muestre como oferta real. Quítalo si quieres usarla para una demostración de SEO.
 
@@ -101,6 +102,42 @@ Cada modelo tiene su propio ancla (`#modelo-encino`, `#modelo-cantera`, `#modelo
 ---
 
 ## 4. Qué está preparado para Google Ads
+
+### 4.1 Crear una conversión y conectarla (para la demostración en clase)
+
+La etiqueta de Google ya está puesta. Falta el segundo paso: crear la acción de conversión y pegar su etiqueta.
+
+1. En Google Ads: **Objetivos → Conversiones → Acciones de conversión → Nueva → Sitio web**.
+2. Escribe el dominio y elige **Agregar manualmente la conversión**.
+   - Categoría: *Envío de formulario de cliente potencial*
+   - Nombre: `Formulario enviado — Vive Sam TV`
+   - Valor: el que quieras usar en clase · Recuento: **Una** (un lead por persona)
+3. En **Configurar la etiqueta → Instalar manualmente**, Google muestra el *fragmento de evento*:
+
+   ```js
+   gtag('event', 'conversion', {'send_to': 'AW-17346716536/AbC-D_efGhIjKlMnOp'});
+   ```
+
+4. Copia **solo lo que va después de la diagonal** (`AbC-D_efGhIjKlMnOp`) y pégalo en `js/tracking.js`:
+
+   ```js
+   ADS_CONVERSION_LABELS: {
+     generate_lead:  'AbC-D_efGhIjKlMnOp',   // Formulario enviado
+     click_whatsapp: 'LABEL_WHATSAPP_HERE',
+     click_phone:    'LABEL_TELEFONO_HERE'
+   },
+   ```
+
+No hay que pegar el fragmento de evento en el HTML: la página ya lo dispara sola en el momento correcto
+(al enviar el formulario, al tocar WhatsApp o al tocar el teléfono), con `value` y `currency`.
+
+5. Comprueba con la extensión **Google Tag Assistant** o con `?debug=1`: al enviar el formulario, la consola
+   muestra `CONVERSIÓN enviada a Google Ads` con el `send_to` usado.
+
+Mientras una etiqueta siga como `LABEL_..._HERE`, ese evento se registra en el `dataLayer` pero **no** se
+envía como conversión, y en modo `?debug=1` la consola avisa que falta.
+
+### 4.2 Resto de la preparación
 
 1. **URLs finales por grupo de anuncios**, con message match automático:
    - Casas → `https://…/?interes=casas#casas`
